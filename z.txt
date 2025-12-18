@@ -1,0 +1,888 @@
+Angular + NestJS + TypeORM (RELATIONS-FOCUSED)
+
+Total Time: 12 Hours
+Mode: Hands-on Practice / Mock Test
+Restrictions:
+
+No code generators for entities
+
+Focus on correctness, not UI polish
+
+🎯 PROJECT OVERVIEW
+
+Build a Role-Based Product Ordering System with:
+
+Authentication
+
+Role-based access
+
+Search, filter, sort, pagination
+
+Cart & order system
+
+Admin approval workflow
+
+Maximum use of TypeORM relations
+
+Angular Reactive Forms (FormArray included)
+
+🧩 SECTION 1 — PROJECT SETUP (45 minutes)
+Backend (NestJS)
+
+Create NestJS project
+
+Configure database connection
+
+Enable TypeORM
+
+Enable auto-loading of entities
+
+Verify DB connection by running the server
+
+Frontend (Angular)
+
+Create Angular project (standalone components)
+
+Setup routing
+
+Create base layout (header + router outlet)
+
+✅ Expected Outcome
+
+Backend runs without DB errors
+
+Frontend loads successfully
+
+🔐 SECTION 2 — USER & AUTHENTICATION (1.5 hours)
+Concepts to Implement
+
+JWT authentication
+
+Role-based access control
+
+One-to-One relation
+
+Backend Tasks
+
+Create User entity
+
+Create UserProfile entity
+
+Establish User ↔ Profile (OneToOne)
+
+Enable cascade for profile
+
+Implement:
+
+Register
+
+Login
+
+Store role inside JWT
+
+Create:
+
+Auth Guard
+
+Role Guard
+
+Frontend Tasks
+
+Login page (Reactive Form)
+
+Register page (Reactive Form)
+
+Store token & role
+
+Protect routes using guards
+
+✅ Expected Outcome
+
+User registers with profile
+
+Login works
+
+Role-based routing works
+
+🧱 SECTION 3 — ROLES & USERS (1 hour)
+Concepts to Implement
+
+One-to-Many / Many-to-One
+
+Foreign key understanding
+
+Backend Tasks
+
+Create Role entity
+
+Establish:
+
+Role → Users (OneToMany)
+
+User → Role (ManyToOne)
+
+Ensure role_id exists in users table
+
+Restrict admin-only routes
+
+Frontend Tasks
+
+Admin can view users list
+
+Show role name for each user
+
+✅ Expected Outcome
+
+Users linked to roles correctly
+
+FK exists in users table
+
+📦 SECTION 4 — PRODUCTS & CATEGORIES (1.5 hours)
+Concepts to Implement
+
+Many-to-Many
+
+Join tables
+
+Backend Tasks
+
+Create Product entity
+
+Create Category entity
+
+Establish Product ↔ Category (ManyToMany)
+
+Admin-only product creation
+
+Assign multiple categories to a product
+
+Frontend Tasks
+
+Admin product list
+
+Add / Edit product
+
+Category multi-select
+
+User can view products only
+
+✅ Expected Outcome
+
+Join table created
+
+Products linked with categories
+
+🔍 SECTION 5 — SEARCH, FILTER, SORT & PAGINATION (2 hours)
+Concepts to Implement
+
+Query parameters
+
+Relation-based filtering
+
+Backend pagination
+
+Backend Tasks
+
+Implement:
+
+Search by product name
+
+Filter by category
+
+Sort by price / name
+
+Pagination with total count
+
+Use query builder
+
+Filter through relations (not frontend)
+
+Frontend Tasks
+
+Search input
+
+Category filter dropdown
+
+Sort dropdown
+
+Pagination controls
+
+Sync query params in URL
+
+✅ Expected Outcome
+
+Efficient backend-driven listing
+
+🛒 SECTION 6 — CART SYSTEM (1.5 hours)
+Concepts to Implement
+
+One-to-One
+
+One-to-Many / Many-to-One
+
+RxJS state management
+
+Backend Tasks
+
+Create Cart entity
+
+Create CartItem entity
+
+Establish:
+
+User ↔ Cart (OneToOne)
+
+Cart → CartItems (OneToMany)
+
+CartItem → Product (ManyToOne)
+
+Auto-create cart for user
+
+Frontend Tasks
+
+Add to cart
+
+Cart page
+
+Update quantity
+
+Remove item
+
+Global cart counter using BehaviorSubject
+
+✅ Expected Outcome
+
+Cart persists per user
+
+Cart counter updates globally
+
+📦 SECTION 7 — ORDERS & ORDER ITEMS (2 hours)
+Concepts to Implement
+
+One-to-Many
+
+Cascading inserts
+
+Backend Tasks
+
+Create Order entity
+
+Create OrderItem entity
+
+Establish:
+
+User → Orders (OneToMany)
+
+Order → OrderItems (OneToMany)
+
+OrderItem → Product (ManyToOne)
+
+Convert cart into order
+
+Clear cart after order
+
+Frontend Tasks
+
+Place order
+
+My Orders page
+
+Display order items & status
+
+✅ Expected Outcome
+
+Orders created correctly
+
+Items saved via cascade
+
+✅ SECTION 8 — ADMIN APPROVAL WORKFLOW (1.5 hours)
+Concepts to Implement
+
+Many-to-One
+
+Nullable foreign keys
+
+Role-based dashboards
+
+Backend Tasks
+
+Add order status:
+
+PENDING
+
+APPROVED
+
+REJECTED
+
+Link order to approving admin
+
+Admin approves / rejects orders
+
+Frontend Tasks
+
+Admin approval dashboard
+
+Approve / Reject actions
+
+User sees updated status
+
+✅ Expected Outcome
+
+Approval flow works
+
+Admin linkage stored
+
+🧾 SECTION 9 — REACTIVE FORMS & FORMARRAY (1.5 hours)
+Mandatory Use Cases
+
+Product images
+
+Multiple addresses
+
+Order item lists
+
+Tasks
+
+Use FormArray
+
+Add / remove controls dynamically
+
+Apply validations
+
+Populate form while editing
+
+✅ Expected Outcome
+
+Correct FormArray usage
+
+Clean reactive form structure
+
+📊 SECTION 10 — DASHBOARDS & HOME PAGE (1 hour)
+Home Page
+
+Product listing
+
+Search & filters
+
+Add to cart (login-restricted)
+
+User Dashboard
+
+Total orders
+
+Pending approvals
+
+Cart summary
+
+Admin Dashboard
+
+Total users
+
+Pending approvals
+
+Total products
+
+🧼 SECTION 11 — FINAL POLISH (45 minutes)
+Tasks
+
+JWT HTTP interceptor
+
+Global error handling
+
+Loading indicators
+
+Clean folder structure
+
+Remove console logs
+
+🧠 RELATION CHECKLIST (MUST BE TRUE)
+
+OneToOne → User ↔ Profile
+
+OneToMany → Role → Users
+
+ManyToOne → User → Role
+
+ManyToMany → Product ↔ Category
+
+OneToOne → User ↔ Cart
+
+OneToMany → Order → Items
+
+ManyToOne → Order → ApprovedBy (Admin)
+
+🎯 FINAL SELF-CHECK QUESTIONS
+
+Where does the foreign key live?
+
+Why OneToMany never creates a column?
+
+When should cascade be avoided?
+
+Why pagination must be backend-driven?
+
+How role guards differ from auth guards?
+
+✅ END RESULT
+
+After completing this:
+
+You understand TypeORM relations deeply
+
+You can design real backend schemas
+
+You are interview-ready
+
+You can confidently explain why each relation exists
+
+If you want next:
+
+Angular-only task paper
+
+TypeORM relation flowchart
+
+Interview questions from this project
+
+Common mistakes checklist
+
+Just tell me 👊
+-----------------------------------------------------------------
+
+You’re welcome 👊
+Below is a **DETAILED, SECTION-WISE, TEST-READY PRACTICE PROJECT DOCUMENT** for a **Ticket Support System**.
+This is **expanded**, **clear**, and **copy-paste friendly** — exactly what you asked for.
+
+❗ **No code included**
+❗ Written like a **real exam / take-home assignment**
+
+---
+
+# 📝 PRACTICE PROJECT DOCUMENT
+
+## **Ticket Support System**
+
+**Angular + NestJS + TypeORM**
+
+**Duration:** 10–12 Hours
+**Difficulty:** Intermediate → Advanced
+**Primary Focus:**
+
+* Authentication
+* Multi-role access
+* TypeORM relations
+* Angular Reactive Forms & FormArray
+* Real-world workflow
+
+---
+
+## 🎯 PROJECT OBJECTIVE
+
+Build a **Ticket Support System** where:
+
+* Customers raise support tickets
+* Admin assigns tickets to agents
+* Agents and customers communicate
+* Ticket lifecycle is managed through statuses
+* Role-based dashboards and permissions exist
+
+---
+
+## 👥 USER ROLES (MANDATORY)
+
+### 1️⃣ CUSTOMER
+
+* Register & login
+* Raise tickets
+* View own tickets
+* Reply on tickets
+* Close tickets after resolution
+
+### 2️⃣ AGENT (Support Executive)
+
+* View assigned tickets
+* Reply to tickets
+* Update ticket status
+* Resolve tickets
+
+### 3️⃣ ADMIN
+
+* Manage users
+* Assign tickets to agents
+* View all tickets
+* Override ticket status
+
+---
+
+# 🧱 SECTION 1 — PROJECT INITIAL SETUP (45 minutes)
+
+### Backend (NestJS)
+
+* Create a NestJS project
+* Configure database connection
+* Enable TypeORM
+* Enable auto entity loading
+* Verify database connection
+
+### Frontend (Angular)
+
+* Create Angular project (standalone components)
+* Setup routing
+* Create shared layout:
+
+  * Navbar
+  * Router outlet
+
+✅ **Outcome**
+
+* Backend starts without DB errors
+* Frontend loads default route
+
+---
+
+# 🔐 SECTION 2 — AUTHENTICATION & AUTHORIZATION (1.5 hours)
+
+### Concepts Covered
+
+* JWT authentication
+* Password hashing
+* Role-based access control
+* Guards & interceptors
+
+### Backend Tasks
+
+* Create `User` entity with:
+
+  * id
+  * name
+  * email
+  * password
+  * role (CUSTOMER | AGENT | ADMIN)
+* Implement:
+
+  * Register
+  * Login
+* Hash passwords
+* Store role in JWT
+* Create:
+
+  * Authentication guard
+  * Role guard
+
+### Frontend Tasks
+
+* Login page (Reactive Form)
+* Register page (Reactive Form)
+* Store JWT & role
+* Protect routes using guards
+
+✅ **Outcome**
+
+* Users authenticate successfully
+* Routes restricted by role
+
+---
+
+# 👤 SECTION 3 — USER PROFILE & CONTACT DETAILS (1 hour)
+
+### Concepts Covered
+
+* **OneToOne**
+* **OneToMany / ManyToOne**
+* Angular **FormArray**
+
+### Backend Tasks
+
+* Create `UserProfile` entity:
+
+  * fullName
+  * department (for agents)
+* Create `PhoneNumber` entity
+* Establish:
+
+  * User → Profile (OneToOne)
+  * User → PhoneNumbers (OneToMany)
+* Enable cascade where appropriate
+
+### Frontend Tasks
+
+* Profile edit page
+* Phone numbers using **FormArray**
+* Add / remove phone numbers dynamically
+
+✅ **Outcome**
+
+* Users can manage profile
+* Multiple phone numbers stored relationally
+
+---
+
+# 🎫 SECTION 4 — TICKET CREATION (CUSTOMER) (1.5 hours)
+
+### Concepts Covered
+
+* **ManyToOne**
+* Status lifecycle
+
+### Backend Tasks
+
+* Create `Ticket` entity:
+
+  * title
+  * description
+  * priority (LOW | MEDIUM | HIGH)
+  * status (OPEN | IN_PROGRESS | RESOLVED | CLOSED)
+* Relations:
+
+  * Ticket → Customer (ManyToOne)
+  * Ticket → AssignedAgent (ManyToOne, nullable)
+* Default status: `OPEN`
+
+### Frontend Tasks
+
+* Create ticket form (Reactive Form)
+* My Tickets page
+* Show:
+
+  * Priority
+  * Status
+  * Created date
+
+✅ **Outcome**
+
+* Customers can raise tickets
+* Tickets stored with correct ownership
+
+---
+
+# 🧑‍💼 SECTION 5 — TICKET ASSIGNMENT (ADMIN) (1 hour)
+
+### Concepts Covered
+
+* Nullable foreign keys
+* Role-based actions
+
+### Backend Tasks
+
+* Admin endpoint to:
+
+  * View unassigned tickets
+  * Assign agent to ticket
+* On assignment:
+
+  * Set agent
+  * Update status to `IN_PROGRESS`
+
+### Frontend Tasks
+
+* Admin dashboard
+* Unassigned ticket list
+* Agent selection dropdown
+* Assign action
+
+✅ **Outcome**
+
+* Tickets routed to agents properly
+
+---
+
+# 💬 SECTION 6 — TICKET REPLIES / CONVERSATION (2 hours)
+
+### Concepts Covered
+
+* **OneToMany**
+* Conversation threads
+* Role-aware communication
+
+### Backend Tasks
+
+* Create `TicketReply` entity:
+
+  * message
+  * createdAt
+* Relations:
+
+  * Ticket → Replies (OneToMany)
+  * Reply → User (ManyToOne)
+* Allow replies by:
+
+  * Customer
+  * Assigned Agent
+
+### Frontend Tasks
+
+* Ticket detail page
+* Chat-like conversation UI
+* Reply form
+* Display sender name & role
+
+✅ **Outcome**
+
+* Full conversation per ticket
+
+---
+
+# 🔄 SECTION 7 — TICKET STATUS MANAGEMENT (1 hour)
+
+### Concepts Covered
+
+* Controlled state transitions
+* Business rules
+
+### Backend Tasks
+
+* Agent can:
+
+  * Mark ticket as RESOLVED
+* Customer can:
+
+  * Close ticket (CLOSED)
+* Admin can:
+
+  * Override any status
+
+### Frontend Tasks
+
+* Status action buttons (role-based)
+* Visual status indicators
+
+✅ **Outcome**
+
+* Ticket lifecycle enforced correctly
+
+---
+
+# 📊 SECTION 8 — DASHBOARDS (1 hour)
+
+### Customer Dashboard
+
+* Total tickets
+* Open vs closed tickets
+
+### Agent Dashboard
+
+* Assigned tickets
+* Pending resolutions
+
+### Admin Dashboard
+
+* All tickets
+* Unassigned tickets
+* Agent workload summary
+
+---
+
+# 🔍 SECTION 9 — SEARCH, FILTER & PAGINATION (1 hour)
+
+### Concepts Covered
+
+* Query parameters
+* Backend pagination
+* Role-based visibility
+
+### Backend Tasks
+
+* Search tickets by title
+* Filter by:
+
+  * status
+  * priority
+* Paginate results
+* Restrict data by role
+
+### Frontend Tasks
+
+* Search input
+* Filters
+* Pagination controls
+
+---
+
+# 🧼 SECTION 10 — FINAL POLISH & HARDENING (45 minutes)
+
+### Tasks
+
+* JWT HTTP interceptor
+* Global error handling
+* Loading states
+* Clean folder structure
+* Remove debug logs
+
+---
+
+# 🧠 TYPEORM RELATIONS PRACTICED
+
+| Relation             | Usage               |
+| -------------------- | ------------------- |
+| OneToOne             | User ↔ Profile      |
+| OneToMany            | User → PhoneNumbers |
+| ManyToOne            | PhoneNumber → User  |
+| ManyToOne            | Ticket → Customer   |
+| ManyToOne (nullable) | Ticket → Agent      |
+| OneToMany            | Ticket → Replies    |
+| ManyToOne            | Reply → User        |
+
+---
+
+# 🎯 FINAL SELF-CHECK QUESTIONS
+
+1. Why is ticket → agent nullable?
+2. Why replies are separate entity?
+3. Why FormArray maps to relation?
+4. How role guards differ from auth guards?
+5. How do you prevent unauthorized status updates?
+
+---
+
+# ✅ FINAL OUTCOME
+
+After completing this project, you will be able to:
+
+* Design **real-world relational schemas**
+* Implement **multi-role systems**
+* Use **Angular FormArray correctly**
+* Explain **TypeORM relations confidently**
+* Handle **test & interview scenarios**
+
+---
+
+If you want next, I can give you:
+
+* 📐 **ERD diagram (text-based)**
+* 📋 **Exact API contracts**
+* 🗂 **Folder structure (Angular + NestJS)**
+* 🎯 **Mock interview questions for this project**
+* ⏱ **12-hour execution checklist**
+
+Just tell me what you want next 👊
+
+//////////////////////////
+
+🎫 Ticket
+
+id
+
+title
+
+description
+
+priority (LOW | MEDIUM | HIGH)
+
+status (OPEN | IN_PROGRESS | RESOLVED | CLOSED)
+
+customer → ManyToOne
+
+assignedAgent → ManyToOne (nullable)
+
+replies → OneToMany
+
+💬 TicketReply
+
+id
+
+message
+
+createdAt
+
+ticket → ManyToOne
+
+user → ManyToOne
